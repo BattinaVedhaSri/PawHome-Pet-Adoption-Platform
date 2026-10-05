@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>PawHome</title>
+    <script>
+      const repo = "/PawHome-Pet-Adoption-Platform";
+      const currentPath = window.location.pathname;
+      const currentSearch = window.location.search;
+
+      const route = currentPath.startsWith(repo)
+        ? currentPath.slice(repo.length)
+        : currentPath;
+
+      window.location.replace(
+        repo + "/?route=" + encodeURIComponent(route + currentSearch)
+      );
+    </script>
+  </head>
+
+  <body>
+    <p>Loading PawHome...</p>
+  </body>
+</html>
